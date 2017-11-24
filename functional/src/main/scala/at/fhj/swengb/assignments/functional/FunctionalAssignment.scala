@@ -9,12 +9,16 @@ object FunctionalAssignment {
   /**
     * A function which returns its parameters in a changed order. Look at the type signature.
     */
-  def flip[A, B](t: (A, B)): (B, A) = ???
+  def flip[A, B](t: (A, B)): (B, A) = {(t._2,t._1)}
 
   /**
     * given a Seq[A] and a function f : A => B, return a Seq[B]
     */
-  def unknown[A, B](as: Seq[A], fn: A => B): Seq[B] = ???
+  def unknown[A, B](as: Seq[A], fn: A => B): Seq[B] = {
+    for {
+      x <- as
+    }yield fn(x)
+  }
 
   /**
     * Returns the absolute value of the parameter i.
@@ -22,7 +26,7 @@ object FunctionalAssignment {
     * @param i a value, either with a positive or a negative sign.
     * @return
     */
-  def abs(i: Int): Int = ???
+  def abs(i: Int): Int = if (i<0) i * -1 else i
 
 
   // Describe with your own words what this function does.
@@ -40,6 +44,9 @@ object FunctionalAssignment {
     * @tparam A
     * @tparam B
     * @return
+    *
+    *
+    *
     */
   def op[A, B](as: Seq[A], b: B)(fn: (B, A) => B): B = as.foldLeft(b)(fn)
 
@@ -50,7 +57,7 @@ object FunctionalAssignment {
     * @param numbers
     * @return
     */
-  def sum(numbers: Seq[Int]): Int = ???
+  def sum(numbers: Seq[Int]): Int = op(numbers,0)(_+_)
 
 
   /**
@@ -63,7 +70,16 @@ object FunctionalAssignment {
     * @param i parameter for which the factorial must be calculated
     * @return i!
     */
-  def fact(i: Int): Int = ???
+  def fact(i: Int): Int = {
+  if(i>0){
+    var fract = i
+    for (x <- 1 to (i-1)){
+      fract = fract * x
+      }
+    return(fract)
+    }
+  else return(0)
+  }
 
   /**
     * compute the n'th fibonacci number
@@ -73,7 +89,11 @@ object FunctionalAssignment {
     *
     * https://en.wikipedia.org/wiki/Fibonacci_number
     */
-  def fib(n: Int): Int = ???
+  def fib(n: Int): Int = n match {
+    case 0 => n
+    case 1 => n
+    case _ => fib(n-1) + fib(n-2)
+  }
 
   /**
     * Implement a isSorted which checks whether an Array[A] is sorted according to a
@@ -82,7 +102,14 @@ object FunctionalAssignment {
     * Implementation hint: you always have to compare two consecutive elements of the array.
     * Elements which are equal are considered to be ordered.
     */
-  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = ???
+  def isSorted[A](as: Array[A], gt: (A, A) => Boolean): Boolean = {
+    var v: Boolean = true
+
+    for (i <- 0 until as.length-1){
+      v = v && gt(as(i),as(i+1))
+    }
+    return(v)
+  }
 
   /**
     * Takes both lists and combines them, element per element.
@@ -90,7 +117,15 @@ object FunctionalAssignment {
     * If one sequence is shorter than the other one, the function stops at the last element
     * of the shorter sequence.
     */
-  def genPairs[A, B](as: Seq[A], bs: Seq[B]): Seq[(A, B)] = ???
+  def genPairs[A, B](as: Seq[A], bs: Seq[B]): Seq[(A, B)] ={
+    var x=1
+    var pairs = Seq((as(0),bs(0)))
+    while(x<=as.length-1 && x<=bs.length-1){
+      pairs = pairs ++ Seq((as(x),bs(x)))
+      x=x+1
+    }
+    return(pairs)
+  }
 
   // a simple definition of a linked list, we define our own list data structure
   sealed trait MyList[+A]
@@ -103,9 +138,17 @@ object FunctionalAssignment {
   // it also provides a convenience constructor in order to instantiate a MyList without hassle
   object MyList {
 
-    def sum(list: MyList[Int]): Int = ???
+    def sum(list: MyList[Int]): Int = list match {
+      case MyNil => 0
 
-    def product(list: MyList[Int]): Int = ???
+      case Cons(head,tail) => head + sum(tail)
+    }
+
+    def product(list: MyList[Int]): Int = list match {
+      case MyNil => 1
+
+      case Cons(head,tail) => head * product(tail)
+    }
 
     def apply[A](as: A*): MyList[A] = {
       if (as.isEmpty) MyNil
