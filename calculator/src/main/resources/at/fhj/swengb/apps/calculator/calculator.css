@@ -2,9 +2,94 @@
 // see http://fxexperience.com/2011/12/styling-fx-buttons-with-css/
 
 #calculator {
-	-fx-background-color:#00ff00;
+    -fx-background-color:#606670
 }
 
-#calculator .grey {
-	-fx-background-color:#ff00ff;
+#calculator .buttons_functional {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .buttons_functional:armed {
+    -fx-padding: 18 15 15 15;
+    -fx-background-insets: 0,5 0 0 0, 6 0 0 0, 7 0 0 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+        #606670,
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 0,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .buttons_numblock {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #ca6f1e 0%, #ca6f1e 100%),
+            #ca6f1e,
+            #d68910,
+            radial-gradient(center 50% 50%, radius 100%, #f39c12, #d68910);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .buttons_numblock:armed {
+    -fx-padding: 18 15 15 15;
+    -fx-background-insets: 0,5 0 0 0, 6 0 0 0, 7 0 0 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            #606670,
+            #ca6f1e,
+            #d68910,
+            radial-gradient(center 50% 50%, radius 100%, #f39c12, #d68910);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 0,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .buttons_special {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            linear-gradient(from 0% 93% to 0% 100%, #707b7c 0%, #707b7c 100%),
+            #424949,
+            #707b7c,
+            radial-gradient(center 50% 50%, radius 100%, #707b7c, #515a5a);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .buttons_special:armed {
+    -fx-padding: 18 15 15 15;
+    -fx-background-insets: 0,5 0 0 0, 6 0 0 0, 7 0 0 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+            #606670,
+            #424949,
+            #707b7c,
+            radial-gradient(center 50% 50%, radius 100%, #707b7c, #515a5a);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 0,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+}
+
+#calculator .textarea {
+    -fs-background-radius: 50;
+    -fx-background-color: #c2c2c2;
 }
