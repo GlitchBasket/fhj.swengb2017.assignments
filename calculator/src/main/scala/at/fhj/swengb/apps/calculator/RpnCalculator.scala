@@ -16,8 +16,6 @@ object RpnCalculator {
     */
   def apply(s: String): Try[RpnCalculator] = ???
 
-}
-
 /**
   * Reverse Polish Notation Calculator.
   *
@@ -32,7 +30,7 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Op): Try[RpnCalculator] = ???
+  def push(op: Op): Try[RpnCalculator] = Try(RpnCalculator())
 
   /**
     * Pushes val's on the stack.
@@ -42,7 +40,7 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Seq[Op]): Try[RpnCalculator] = ???
+  def push(op: Op): Try[RpnCalculator] = ???
 
   /**
     * Returns an tuple of Op and a RevPolCal instance with the remainder of the stack.
@@ -56,12 +54,20 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     *
     * @return
     */
-  def peek(): Op = ???
+  def peek(): Op = {
+    if (stack.nonEmpty) {
+      stack.head
+    }
+    else {
+      throw new NoSuchElementException
+    }
+
+  }
 
   /**
     * returns the size of the stack.
     *
     * @return
     */
-  def size: Int = ???
+  def size: Int = stack.size
 }

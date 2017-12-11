@@ -56,18 +56,116 @@ class CalculatorFxController extends Initializable {
 
   def setCalculator(rpnCalculator : RpnCalculator) : Unit = calculatorProperty.set(rpnCalculator)
 
-  @FXML var numberTextField : TextField = _
+  @FXML var number1 : TextField = _
+  @FXML var number2 : TextField = _
+  @FXML var result : TextField = _
 
   override def initialize(location: URL, resources: ResourceBundle) = {
 
   }
 
   def sgn(): Unit = {
-    getCalculator().push(Op(numberTextField.getText)) match {
+    getCalculator().push(Op(number1.getText)) match {
       case Success(c) => setCalculator(c)
       case Failure(e) => // show warning / error
     }
     getCalculator().stack foreach println
+  }
+  /**
+  *  Number-Buttons
+  */
+  def zero(): Unit = {
+    result.appendText("0")
+  }
+
+  def one(): Unit = {
+    result.appendText("1")
+  }
+
+  def two(): Unit = {
+    result.appendText("2")
+  }
+
+  def three(): Unit = {
+    result.appendText("3")
+  }
+
+  def four(): Unit = {
+    result.appendText("4")
+  }
+
+  def five(): Unit = {
+    result.appendText("5")
+  }
+
+  def six(): Unit = {
+    result.appendText("6")
+  }
+
+  def seven(): Unit = {
+    result.appendText("7")
+  }
+
+  def eight(): Unit = {
+    result.appendText("8")
+  }
+
+  def nine(): Unit = {
+    result.appendText("9")
+  }
+
+  /**
+  Functional-Buttons
+    */
+
+  def enter(): Unit = {
+    if (number2.getText == "") {
+      number2.setText(result.getText)
+      result.setText("")
+    }
+    else if (number1.getText == "" && number2.getText != "") {
+      number1.setText(number2.getText)
+      number2.setText(result.getText)
+      result.setText("")
+    }
+
+  }
+
+  def comma(): Unit = {
+    result.appendText(".")
+  }
+
+  def add(): Unit = {
+
+  }
+
+  def subtract(): Unit = {
+
+  }
+
+  def multiply(): Unit = {
+
+  }
+
+  def devide(): Unit = {
+
+  }
+  /**
+  Special-Buttons
+    */
+
+  def percent(): Unit = {
+
+  }
+
+  def plusminus(): Unit = {
+
+  }
+
+  def clear(): Unit = {
+    number1.setText("")
+    number2.setText("")
+    result.setText("")
   }
 
 
