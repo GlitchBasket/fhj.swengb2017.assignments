@@ -106,10 +106,6 @@
             <GridPane.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </GridPane.margin>
-            <stylesheets>
-                <URL value="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" />
-                <URL value="@calculator.css" />
-            </stylesheets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -132,10 +128,6 @@
             <GridPane.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </GridPane.margin>
-            <stylesheets>
-                <URL value="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" />
-                <URL value="@calculator.css" />
-            </stylesheets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -169,10 +161,6 @@
             <GridPane.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </GridPane.margin>
-            <stylesheets>
-                <URL value="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" />
-                <URL value="@calculator.css" />
-            </stylesheets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -206,10 +194,6 @@
             <GridPane.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </GridPane.margin>
-            <stylesheets>
-                <URL value="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" />
-                <URL value="@calculator.css" />
-            </stylesheets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -232,15 +216,11 @@
             <GridPane.margin>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </GridPane.margin>
-            <stylesheets>
-                <URL value="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" />
-                <URL value="@calculator.css" />
-            </stylesheets>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
-        <TextField fx:id="number1" alignment="CENTER_RIGHT" editable="false" prefHeight="70.0" prefWidth="321.0" styleClass="textarea" stylesheets="@../../../Workspace/fhj.swengb2017.assignments/calculator/src/main/resources/at/fhj/swengb/apps/calculator/calculator.css" GridPane.columnSpan="4" GridPane.rowIndex="1">
+        <TextField fx:id="number1" alignment="CENTER_RIGHT" editable="false" prefHeight="70.0" prefWidth="321.0" styleClass="textarea" GridPane.columnSpan="4" GridPane.rowIndex="1">
             <font>
                 <Font name="System Bold" size="27.0" />
             </font>
