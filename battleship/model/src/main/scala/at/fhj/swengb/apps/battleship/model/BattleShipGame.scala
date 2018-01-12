@@ -8,6 +8,8 @@ case class BattleShipGame(battleField: BattleField,
                           getCellHeight: Int => Double,
                           log: String => Unit) {
 
+  var clicks: List[BattlePos] = List()
+
   /**
     * remembers which vessel was hit at which position
     * starts with the empty map, meaning that no vessel was hit yet.
@@ -31,11 +33,32 @@ case class BattleShipGame(battleField: BattleField,
       getCellHeight(y),
       log,
       battleField.fleet.findByPos(pos),
-      updateGameState)
+      updateGameState,
+      order)
   }
 
   def getCells(): Seq[BattleFxCell] = cells
 
+  def order(battlePos: BattlePos): List[BattlePos] = {
+    clicks = clicks :+ battlePos
+    clicks
+
+  }
+
+  def loadOrder(pos: List[BattlePos],sim: Boolean): Unit = {
+    if (sim == true) {
+      for (p <- pos) {
+        val cell: BattleFxCell = cells.filter(x => x.pos.equals(p)).head
+        cell.simClick()
+      }
+    }
+    else {
+    for (p <- pos) {
+      val cell: BattleFxCell = cells.filter(x => x.pos.equals(p)).head
+      cell.mouseClick()
+      }
+    }
+  }
 
   def updateGameState(vessel: Vessel, pos: BattlePos): Unit = {
     log("Vessel " + vessel.name.value + " was hit at position " + pos)
@@ -81,6 +104,4 @@ case class BattleShipGame(battleField: BattleField,
     }
 
   }
-
-
 }

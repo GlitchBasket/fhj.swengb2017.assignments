@@ -9,22 +9,72 @@
 | Actual Hours
 | Description
 
-| Arneitzj15
-| 29.11.17
+| Rauchens16
+| 21.12.17
 | 2
-| 1
-| Review of this and that
+| 3
+| Review of the homework
 
-| Arneitzj15
-| 30.11.17
-| 1
+| Rauchens16
+| 21.12.17
+| 4
+| 3
+| Implement .proto
+
+| Rauchens16
+| 21.11.17
+| 4
+| 4
+| Implement converter (BattleShipProtocol)
+
+| Rauchens16
+| 25.12.17
+| 4
 | 5
-| implemented css
+| Finished load/save
 
-| Heiderst16
-| 11.07.17
+| Rauchens16
+| 27.12.17
+| 6
+| 5
+| Finished slider
+
+| Lachchri16
+| 21.12.17
+| 2
+| 3
+| Review of the homework
+
+| Lachchri16
+| 21.12.17
+| 4
+| 3
+| Implement .proto
+
+| Lachchri16
+| 21.12.17
+| 4
+| 4
+| Implement converter (BattleShipProtocol)
+
+| Lachchri16
+| 25.12.17
+| 4
+| 5
+| Finished design (css / fxml)
+
+| Lachchri16
+| 28.12.17
 | 2
 | 2
-| fixed bugs
+| history (slider / Button)
+
+| Lachchri16
+| 28.12.17
+| 3
+| 3
+| Testing and bug fixing
+
+
 
 |===

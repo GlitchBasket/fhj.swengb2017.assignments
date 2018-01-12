@@ -18,7 +18,10 @@ object BattleShipFxApp {
 
 class BattleShipFxApp extends Application {
 
-  val triedRoot = Try(FXMLLoader.load[Parent](getClass.getResource("/at/fhj/swengb/apps/battleship/jfx/battleshipfx.fxml")))
+  val fxml = "/at/fhj/swengb/apps/battleship/jfx/battleshipfx.fxml"
+  val css = "/at/fhj/swengb/apps/battleship/jfx/battleshipfx.css"
+
+  val triedRoot = Try(FXMLLoader.load[Parent](getClass.getResource(fxml)))
 
   override def start(stage: Stage) = {
     triedRoot match {
